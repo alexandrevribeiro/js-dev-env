@@ -22,3 +22,30 @@ Packages used to share your local application across the internet without publis
             - lt --port 3000
             - lt --port 3000 --subdomain alexandreribeiro
     * Combining it with 'Browsersync' would be a great idea to test your local app in muiltiple devices
+
+# Automation
+    - Grunt
+        - The original one
+        - It's configuration based. Configured through a json file
+        - Writes itermediary files btween steps
+        - Large plugin ecosystem
+    - Gulp
+        - A more modern task runner
+        - Focus in memory-streams (pipes)
+        - Fast(er)
+        - It's code based rather than configuration based.
+        - Large plugin ecosystem
+    - npm scripts
+        - Declared in the "scripts" section in the package.json
+        - Leverage your OS' command line
+        - Directly use npm Packages
+        - Call separate Node scripts
+        - Convention-based pre/post hooks
+        - Leverage world's largest package manager
+        Why npm Scripts?
+            - The simplicity of using npm packages directly
+            - No need for separate plugins
+            - Simpler debugging
+            - Better docs
+            - Easy to learn
+            - Simple            
