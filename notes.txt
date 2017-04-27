@@ -1,0 +1,24 @@
+# Development Webservers
+    - http-server (Ultra-simple. Single command servers current directory)
+    - live-server (Lightweight. Support live-reloading)
+    - express (Comprehesive. Highly configurable. Can be used in Production. Can run it everywhere)
+    - koa
+    - hapi
+    - budo (Integrates with Browserify. Hot reloading)
+    - Webpack Dev Server (Built in to Webpack. Servers from memory. Hot reloading)
+    - Browsersync (Dedicated IP for sharing work on LAN. All interactions remain in sync. Great for cross-device testing.)
+
+# Sharing Work-in-progress
+Packages used to share your local application across the internet without publishing it:
+    - localtunnel (Easiest setup Ultra-versatile)
+    - ngrok (Easy setup Secure)
+    - Surge (No firewall hole, Hosting persists, Only static files)
+    - Now (No firewall hole, Hosting persists, Only static files)
+
+- localtunnel:
+    * Using it to share your app:
+        1) run you app (node myapp.js)
+        2) Run the command: 'lt --port {port} [--subdomain {sub-domain}]'. Examples:
+            - lt --port 3000
+            - lt --port 3000 --subdomain alexandreribeiro
+    * Combining it with 'Browsersync' would be a great idea to test your local app in muiltiple devices
