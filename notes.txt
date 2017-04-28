@@ -1,7 +1,7 @@
-# Development Webservers
+# Development WebServers
     - http-server (Ultra-simple. Single command servers current directory)
     - live-server (Lightweight. Support live-reloading)
-    - express (Comprehesive. Highly configurable. Can be used in Production. Can run it everywhere)
+    - express (Comprehensive. Highly configurable. Can be used in Production. Can run it everywhere)
     - koa
     - hapi
     - budo (Integrates with Browserify. Hot reloading)
@@ -27,7 +27,7 @@ Packages used to share your local application across the internet without publis
     - Grunt
         - The original one
         - It's configuration based. Configured through a json file
-        - Writes itermediary files btween steps
+        - Writes intermediary files between steps
         - Large plugin ecosystem
     - Gulp
         - A more modern task runner
@@ -48,4 +48,19 @@ Packages used to share your local application across the internet without publis
             - Simpler debugging
             - Better docs
             - Easy to learn
-            - Simple            
+            - Simple
+
+# Transpiling
+Transpilers:
+    - Babel
+        - Allows you to enjoy all the new features of JavaScript, even when they're still experimental.
+        - Modern, standards-based JS
+        - You write standardized JS
+        - Leverage full JS Ecosystem
+    - TypeScript
+        - Superset of JavaScript
+        - Adds additional functionalities to JavaScript
+        - Enhanced autocompletion
+        - Enhanced readability
+        - Safer refactoring
+        - Clearer intent
