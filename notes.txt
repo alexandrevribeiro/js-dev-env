@@ -64,3 +64,43 @@ Transpilers:
         - Enhanced readability
         - Safer refactoring
         - Clearer intent
+
+# 5 Modules Formats
+    - Universal Module Definition (UMD)
+        - Supports global variables
+        - The past, so should be avoided
+        - Syntax:
+                myGlobal;
+
+    - IIFE
+        - The past, so should be avoided
+        - Syntax:
+            (function() { /* ... */ })();
+
+    - Asynchronous Module Definition (ADM)
+        - The past, so should be avoided
+        - Syntax:
+            define(['jq'], function(jq) {});
+
+    - CommonJS (CJS)
+        - Better, modern and more standardized approach
+        - Used when working in node.js
+        - Syntax:
+            var jquery = require('jquery');
+    
+    - ES6 Modules
+        - Better, modern and more standardized approach
+        - Used when working in ES6
+        - Syntax:
+            import jQuery  from 'jquery';
+
+# Why use ES6 Modules?
+    - standardized
+    - Statically analyzable, which means the code can be read and analyzed in a predictable way
+        - Improved autocomplete
+        - Intelligent refactoring
+        - Code fails fast
+        - Tree shaking
+    - Easy to read
+        - Named imports
+        - Default exports
