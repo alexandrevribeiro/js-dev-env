@@ -94,7 +94,7 @@ Transpilers:
         - Syntax:
             import jQuery  from 'jquery';
 
-# Why use ES6 Modules?
+# Why using ES6 Modules?
     - standardized
     - Statically analyzable, which means the code can be read and analyzed in a predictable way
         - Improved autocomplete
@@ -104,3 +104,40 @@ Transpilers:
     - Easy to read
         - Named imports
         - Default exports
+
+# Blundlers
+
+    - Browserify (Simple)
+        - The original. It helped popularize the idea of using npm packages on the Web
+        - The first bundler to reach mass adoption
+        - Bundle npm packages for the web.
+        - Uses CommonJS pattern
+        - Large plugin ecosystem
+
+    - Webpack (Comprehensive)
+        - Bundles much more than just JS
+        - Offers a huge ecosystem of loaders, so you can easily teach Webpack to  intelligently handle your CSS, images, fonts and more 
+        - You can import CSS, Images, etc. like JS
+        - Built in hot-reloading web server
+        - Servers files from memory, which speeds development, builds, and automatically updates client-side state to reflect code changes.
+
+    - Rollup (Tree-shaking and performance, but new)
+        - First tree shaking bundler, which means it eliminates code you're not using from the final bundle
+        - It's faster loading production code (faster than Browserify and Webpack)
+        - Quite new compared to established competitors like Browserify and Webpack
+        - Great for library authors
+        - Doesn't have hot reloading and code splitting yet
+
+    - JSPM (Runtime loader, package manager)
+        - Uses SystemJS, a universal module loader. Which means it can load a variety of JS module styles, including ADM, CommonJS and ES6 modules.
+        - Can load modules at runtime
+        - Has its own package manager
+        - Can install from npm, git and more
+        - Uses Rollup, so you get to enjoy Rollup's tree shaking
+
+# Why using Webpack?
+    - Much more than just JS: CSS, Images, Fonts and HTML.
+    - Bundle splitting, which means you can generate separate bundles for different sections of your app, so they're download on demand
+    - Includes built-in Web server that supports hot module reloading
+    - Webpack 2 offers tree shaking
+    - For now it's the most used bundler
