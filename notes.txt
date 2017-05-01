@@ -141,3 +141,10 @@ Transpilers:
     - Includes built-in Web server that supports hot module reloading
     - Webpack 2 offers tree shaking
     - For now it's the most used bundler
+
+# Sourcemaps
+    - Maps the bundled, transpiled and minified code back to original source
+    - They can be automatically generated as part of our builds
+    - Sourcemaps are downloaded only when you open developer tools
+    - It's defined by the 'devtool' option in the Webpack config file (https://webpack.js.org/configuration/devtool/)
+    - To debug the code you should write a "debugger;" at the point you want to stop
