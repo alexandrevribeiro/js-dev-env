@@ -318,3 +318,28 @@ But if if you want to use experimental features you can use "Babel-eslint" inste
     - Where to run tests: Node
     - Where to place tests: Alongside
     - Where to run tests: Upon save
+
+# Continuous Integration (CI)
+When someone commits code, it's handy to confirm immediately that the commit works as expected when on another machine.
+That's what continuous integration server is for. It catches mistakes quickly, such as when you:
+    - Forget to commit a file
+    - Forget to update package.json
+    - Commit doesn't run cross-platform
+    - Node version conflicts
+    - Bad merge
+    - Didn't run tests
+
+# What does a CI Server do?
+What does a CI Server do to provide all these benefits?
+    - First it builds your application automatically the moment you commit
+    - It runs your tests suit, assuring they pass on multiple machines
+    - It can run check code coverage and reject the commit
+    - It could also automate deployment
+
+# CI Servers
+    - Travis (Linux-based, Hosted solution)
+    - Appveyor (Windows-based, Hosted solution)
+    - Jenkins (Popular, Non-hosted solution)
+    - CircleCI
+    - Semaphore
+    - SnapCI
