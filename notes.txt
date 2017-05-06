@@ -343,3 +343,26 @@ What does a CI Server do to provide all these benefits?
     - CircleCI
     - Semaphore
     - SnapCI
+
+# HTTP Call Approaches
+The options to handle HTTP calls in JS depend on where you're running you're app.
+    - Node:
+        - http
+        - request (best option)
+    - Browser
+        - XMLHttpRequest
+        - jQuery
+        - Framework-based
+        - Fetch (best option, although some browsers lack native support yet)
+    - Node & Browser
+        - isomorphic-fetch
+        - xhr
+        - SuperAgent (as good as Axios)
+        - Axios (best option)
+
+# Why centralize API calls?
+It's important that the API calls are handled in a single Spot (place):
+    - One place to configure all calls
+    - Handle preloader logic
+    - A single place to handle errors
+    - Single seam for mocking your API

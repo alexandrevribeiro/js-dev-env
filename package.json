@@ -16,7 +16,9 @@
     "test-watch": "npm test -- --watch"
   },
   "eslintConfig": {
-    "plugins": ["example"],
+    "plugins": [
+      "example"
+    ],
     "env": {
       "example/custom": true
     }
@@ -32,6 +34,7 @@
   },
   "homepage": "https://github.com/vribeiro-alexandre/js-dev-env#readme",
   "dependencies": {
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "6.16.0",
