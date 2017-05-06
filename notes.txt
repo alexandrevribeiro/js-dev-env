@@ -148,3 +148,81 @@ Transpilers:
     - Sourcemaps are downloaded only when you open developer tools
     - It's defined by the 'devtool' option in the Webpack config file (https://webpack.js.org/configuration/devtool/)
     - To debug the code you should write a "debugger;" at the point you want to stop
+
+# Linting
+Linting is the process of running a program that will analyse code for potential errors.
+
+# Why Lint?
+    - Enforces consistency. Exanples:
+        - Enforcing position of curly braces
+        - Warning about built-in features the team is decided to avoid, like "confirm, alert"
+        - Uses of trailing comma
+        - Declaring global variables
+        - Disallowing the use of eval
+    - Avoids mistakes. Examples:
+        - Extra parenthesis
+        - Overwriting a function
+        - Assignment in a conditional
+        - Missing default case in switch
+        - Leaving debugging-related junk in the code, ex.: debugger / console.log
+
+# Linters
+    - JSLint: The original. It's extremely opinionated.
+    - JSHint: An improvement on JSLint. Offers more configurability.
+    - ESLint: The most popular linter by far. So powerful and configurable. It has become the de facto standard.
+
+    At this time (01/05/2017), none of these linters support TypeScript. Although ESLint is expected to add support in the near feature.
+
+# Configuring ESLint
+Core decisions:
+    1) Config format?
+        - It supports several formats (http://eslint.org/docs/2.0.0/user-guide/configuring#configuration-file-formats) 
+        - But using the existing package.json avoids having a new file        
+    2) Which built-in rules?
+        - Should be decided by you (http://eslint.org/docs/rules/)
+    3) Warnings or errors?
+        - For each rule it should be analyzed which one is better:
+        - Warnings:
+            - Can continue Development
+            - Can be ignored
+            - Team must agree: Fix warnings
+        - Errors:
+            - Break the build
+            - Cannot be ignored
+            - Team is forced to comply
+
+    4) Which plugins?
+        https://github.com/dustinspecker/awesome-eslint#plugins
+        
+    5) Use preset instead?
+        - ESLint comes already with a preset
+        - Other options:
+            - airbnb (https://www.npmjs.com/package/eslint-config-airbnb)
+            - XO (https://github.com/sindresorhus/eslint-config-xo)
+
+# ESLint doesn't watch files
+The simplest way to run ESLint is via the command line.
+However, it doesn't currently include a watch setting built-in. Ways to do this:
+    
+    - eslint-loader
+        - Webpack runs ESLint each time we run our build.
+        - It re-lints all files every time you hit Save.
+    - eslint-watch
+        - ESLint wrapper that adds file watching capability
+        - It isn't tied to Webpack
+        - Better warning/errors formating
+        - Displays a message when linting comes back clean, instead of being silent
+        - Easily lint all the files, such as tests, webpack config and build scripts.
+
+# Linting experimental features
+The features supported while directly running ESLint are:
+    - Supports ES6 and ES7 natively
+    - Also supports object spread
+
+But if if you want to use experimental features you can use "Babel-eslint" instead.
+    - It also lints stage 0 - 4 features (https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-)
+
+# Why lint via an Automated Build Process?
+    - One single place to check all feedback related to the code
+    - Universal configuration, regardless the editor
+    - Part of continuous integration
