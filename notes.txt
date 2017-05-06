@@ -21,7 +21,7 @@ Packages used to share your local application across the internet without publis
         2) Run the command: 'lt --port {port} [--subdomain {sub-domain}]'. Examples:
             - lt --port 3000
             - lt --port 3000 --subdomain alexandreribeiro
-    * Combining it with 'Browsersync' would be a great idea to test your local app in muiltiple devices
+    * Combining it with 'Browsersync' would be a great idea to test your local app in multiple devices
 
 # Automation
     - Grunt
@@ -226,3 +226,95 @@ But if if you want to use experimental features you can use "Babel-eslint" inste
     - One single place to check all feedback related to the code
     - Universal configuration, regardless the editor
     - Part of continuous integration
+
+# JavaScript Testing Styles
+    - Unit: Focused on testing single function or module
+    - Integration: Focused on testing interactions between modules
+    - UI: Automate interactions with UI
+
+    Differences between Unit tests and Integration tests
+        - Unit tests:
+            - Test a small unit 
+            - Often a single function
+            - Fast
+            - Run upon save
+        - Integration tests:
+            - Test multiple units
+            - Often involves clicking and waiting (often require real external resources like browsers, web APIs and databases)
+            - Slow
+            - Often run on demand, or in QA
+
+# Unit Testing decisions
+    - Framework:
+        - Mocha:
+            - Most popular
+            - Highly configurable
+            - Mature
+            - Large ecosystem of support
+        - Jasmine:
+            - It's nearly as popular as Mocha and quite similar
+            - Includes and assertion library built in
+            - Less configurable than Mocha
+        - Tape:
+            - Leanest and simplest of the bunch
+            - Its simplicity and minimal configuration is are its key strengths.
+        - QUnit
+            - Oldest one
+            - Create to test jQuery
+        - AVA:
+            - Runs the tests in parallel
+            - Only reruns impacted tests
+        Jest:
+            - Created by Facebook
+            - Nice wrapper over Jasmine
+            - Code coverage
+            - JSDOM
+            - Popular conventions for finding your test files all built in
+
+    - Assertion library
+        Assertion is a way to declare what you expect. Ex.: { expect(2+2).to.equal(4); }
+        Some options:
+        - Chai.js
+        - Should.js
+        - Expect.js
+
+    - Helper Libraries
+        Should we use a helper library? And if so, which one?
+        - JSDOM:
+            - Simulate the browser's domain
+            - Run DOM-related tests without a browser
+        - Cheerio
+            - jQuery for the server
+            - Query virtual DOM using jQuery selectors
+    - Where to run tests
+        - Browser
+            - Karma and Testem: popular test runners for this
+        - Headless Browser (it's a browser that doesn't have a visible interface)
+            - PhantomJS: a full real browser running the V8 JavaScript engine behind the scenes.
+        - In-memory DOM
+            - JSDOM: a library that simulates an actual browser by creating a DOM in memory that we can interact with.
+    - Where to place tests
+        - Centralized in "tests" folder?
+            Many people opt for this because it's a common approach BUT it's not the best option.
+        - Alongside each file being test?
+            This approach brings us some advantages:
+            - Easy imports, since the file under test is in the same path. Ex.: './underTestFile'
+            - Clear visibility of the test files
+            - Convenient to open both at the same time, since they're together
+            - No recreating folder structure
+            - Easy to refactor and move files
+
+    - When to run tests
+        Unit tests should run whenever you hit save. That way you have:
+            - Rapid feedback
+            - Facilitates TDD (test-driven development)
+            - Automatic = Low friction
+            - Increases the visibility of the tests that do exist
+
+# Unit Testing - made decisions
+    - Framework: Mocha
+    - Assertion library: Chai
+    - Helper Library: JSDOM
+    - Where to run tests: Node
+    - Where to place tests: Alongside
+    - Where to run tests: Upon save
