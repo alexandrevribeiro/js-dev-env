@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vribeiro-alexandre/js-dev-env.git"
+    "url": "git+https://github.com/alexandrevribeiro/js-dev-env.git"
   },
   "author": "Alexandre Ribeiro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vribeiro-alexandre/js-dev-env/issues"
+    "url": "https://github.com/alexandrevribeiro/js-dev-env/issues"
   },
-  "homepage": "https://github.com/vribeiro-alexandre/js-dev-env#readme",
+  "homepage": "https://github.com/alexandrevribeiro/js-dev-env#readme",
   "dependencies": {
     "whatwg-fetch": "^2.0.3"
   },
